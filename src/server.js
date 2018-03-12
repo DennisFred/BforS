@@ -23,6 +23,10 @@ const app = express()
 app.set('port', process.env.PORT || 5000)
 app.use(bodyParser.json())
 
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
 // Handle / route
 app.use('/', (request, response) => {
   bot.reply(request, response)
